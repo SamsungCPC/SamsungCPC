@@ -2164,6 +2164,18 @@ function renderTat(){
           document.getElementById('mavgtxt').textContent = 'average ' + avg.toFixed(1) + ' d'; }
 }
 
+/* ---------- click to play video ---------- */
+document.addEventListener('click', function(e){
+  var shot = e.target.closest('.vid[data-yt] .shot');
+  if(!shot) return;
+  var id = shot.parentElement.dataset.yt;
+  shot.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id +
+    '?autoplay=1&rel=0&modestbranding=1" title="Video" frameborder="0" ' +
+    'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  shot.style.cursor = 'default';
+  shot.style.backgroundImage = 'none';
+});
+
 /* ---------- before / after ---------- */
 document.querySelectorAll('[data-ba]').forEach(function(ba){
   var r=ba.querySelector('input'), a=ba.querySelector('.after'), h=ba.querySelector('.handle');
