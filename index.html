@@ -35,7 +35,7 @@ button{font-family:var(--font)}
 .gnb-top{display:flex;justify-content:flex-end;gap:18px;font-size:11px;color:var(--ink-2);padding:9px 0 0}
 .gnb-main{display:flex;align-items:center;gap:26px;padding:8px 0 14px}
 .mark{display:block;width:98px;height:16px;flex:none;cursor:pointer;position:relative;transition:opacity .14s;
-  background-image:url('data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBUODAsLDBkSEw8VHhsgHx4bHR0hJTApISMtJB0dKjkqLTEzNjY2ICg7Pzo0PjA1NjP/2wBDAQkJCQwLDBgODhgzIh0iMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzP/wgARCABWAjADASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//xAAUEAEAAAAAAAAAAAAAAAAAAACQ/9oACAEBAAEFAkC//8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAwEBPwFS/8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAgEBPwFS/8QAFBABAAAAAAAAAAAAAAAAAAAAkP/aAAgBAQAGPwJAv//EABQQAQAAAAAAAAAAAAAAAAAAAJD/2gAIAQEAAT8hQL//2gAMAwEAAgADAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAwEBPxBS/8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAgEBPxBS/8QAFBABAAAAAAAAAAAAAAAAAAAAkP/aAAgBAQABPxBAv//Z');background-size:contain;background-repeat:no-repeat;background-position:left center}
+  background-image:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBUODAsLDBkSEw8VHhsgHx4bHR0hJTApISMtJB0dKjkqLTEzNjY2ICg7Pzo0PjA1NjP/2wBDAQkJCQwLDBgODhgzIh0iMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzP/wgARCABWAjADASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//xAAUEAEAAAAAAAAAAAAAAAAAAACQ/9oACAEBAAEFAkC//8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAwEBPwFS/8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAgEBPwFS/8QAFBABAAAAAAAAAAAAAAAAAAAAkP/aAAgBAQAGPwJAv//EABQQAQAAAAAAAAAAAAAAAAAAAJD/2gAIAQEAAT8hQL//2gAMAwEAAgADAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAwEBPxBS/8QAFBEBAAAAAAAAAAAAAAAAAAAAcP/aAAgBAgEBPxBS/8QAFBABAAAAAAAAAAAAAAAAAAAAkP/aAAgBAQABPxBAv//Z');background-size:contain;background-repeat:no-repeat;background-position:left center}
 .mark:hover{opacity:.55}
 .mark::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .18s}
 .mark:hover::after{transform:scaleX(1)}
@@ -426,8 +426,6 @@ a.ccard:hover{border-color:#b9b9b9}
   display:flex;align-items:center;justify-content:center}
 .nstep b{font-size:13px;font-weight:700}
 .nstep span{font-size:12px;color:var(--grey);font-weight:400;line-height:1.6}
-.vidslot{border:1px dashed var(--line);border-radius:8px;padding:34px 20px;text-align:center;background:var(--wash)}
-.vidslot p{font-size:12px;color:var(--grey-2);font-weight:400;margin:0}
 @media (max-width:860px){
   .bigstats,.cols3,.checks{grid-template-columns:1fr}
   .steps4{grid-template-columns:1fr 1fr}
@@ -1561,8 +1559,14 @@ a.ccard:hover{border-color:#b9b9b9}
       <div class="chk"><h5><em>&#10003;</em>Transitions</h5><p>The chapter circle grows until it fills the screen.</p></div>
       <div class="chk"><h5><em>&#10003;</em>31 languages</h5><p>Latin, Greek and Cyrillic configured with the same typography.</p></div>
     </div>
-    <div style="margin-top:20px">
-      <div class="vidslot"><p>TEST 01 video goes here.</p></div>
+    <div style="margin-top:22px;max-width:640px;margin-left:auto;margin-right:auto">
+      <div class="vid wide" data-yt="RTtzti5dVPk">
+        <div class="shot" style="background-image:url(https://i.ytimg.com/vi/RTtzti5dVPk/hqdefault.jpg)"><div class="pl"></div></div>
+        <div class="meta"><b>TEST 01</b><span>How to use Maintenance mode on your Galaxy phone or tablet.</span>
+          <a class="ytlink" href="https://youtu.be/RTtzti5dVPk" target="_blank" rel="noopener">Open on YouTube &#8599;</a>
+        </div>
+      </div>
+      <p class="cap">Click to play. Needs an internet connection.</p>
     </div>
   </section>
 
