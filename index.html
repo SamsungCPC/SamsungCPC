@@ -142,6 +142,41 @@ button{font-family:var(--font)}
 .tbl tr.hi td:first-child{box-shadow:inset 3px 0 0 var(--navy)}
 .tbl td.n{font-variant-numeric:tabular-nums}
 
+/* agenda button and modal */
+.agendabtn{display:inline-flex;align-items:center;gap:7px;margin:0 0 20px;cursor:pointer;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.42);color:#fff;
+  border-radius:999px;padding:7px 16px;font-size:12.5px;font-weight:700;font-family:var(--font)}
+.agendabtn:hover{background:rgba(255,255,255,.3)}
+.ovl{position:fixed;inset:0;z-index:200;background:rgba(8,10,14,.62);
+  display:flex;align-items:center;justify-content:center;padding:28px 18px}
+.ovl[hidden]{display:none}
+.dlg{background:#fff;border-radius:10px;width:100%;max-width:860px;max-height:86vh;
+  display:flex;flex-direction:column;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.3)}
+.dlghd{display:flex;align-items:center;justify-content:space-between;
+  padding:16px 22px;border-bottom:1px solid var(--line-2);font-size:16px;font-weight:700}
+.dlgx{border:0;background:transparent;font-size:26px;line-height:1;cursor:pointer;color:var(--grey);padding:0 4px}
+.dlgx:hover{color:var(--ink)}
+.dlgbd{overflow-y:auto;padding:4px 22px 24px}
+.aday{font-size:14px;font-weight:700;margin:22px 0 10px;letter-spacing:-.01em}
+.atbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.atbl th{text-align:left;font-size:11px;font-weight:700;color:var(--ink-2);
+  padding:9px 10px;border-bottom:1px solid var(--line)}
+.atbl td{padding:10px;border-bottom:1px solid var(--line-2);vertical-align:top}
+.atime{white-space:nowrap;font-weight:700;width:104px;font-variant-numeric:tabular-nums}
+.aitem{color:var(--ink-2);font-weight:400;line-height:1.5}
+.awho{width:92px;text-align:right}
+.aud{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.03em;
+  border-radius:999px;padding:3px 9px;white-space:nowrap}
+.a-common{background:var(--tint);color:var(--navy)}
+.a-both{background:var(--tint);color:var(--navy)}
+.a-all{background:var(--ink);color:#fff}
+.a-seas{background:#fdeae8;color:#b3261e}
+.a-sebn{background:#eaf2ea;color:#1d7a46}
+@media (max-width:620px){
+  .atime{width:auto} .awho{width:auto}
+  .dlgbd{padding:4px 14px 20px} .dlghd{padding:14px 16px}
+}
+
 /* concept card icons */
 .bico{position:relative;z-index:1;color:#fff;display:block}
 .bico svg{width:48px;height:48px;display:block}
@@ -568,6 +603,10 @@ a.ccard:hover{border-color:#b9b9b9}
       <div class="hero-in">
         <p class="eyebrow">Content Production Centre</p>
         <h1>We keep unboxing</h1>
+        <button class="agendabtn" id="agendaOpen" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+          Agenda
+        </button>
         <div class="srch">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="opacity:.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
           <input id="q" type="text" placeholder="Search this review" autocomplete="off">
@@ -1729,6 +1768,48 @@ a.ccard:hover{border-color:#b9b9b9}
   </div>
 </div>
 
+<!-- ============ AGENDA ============ -->
+<div class="ovl" id="agendaOvl" hidden>
+  <div class="dlg" role="dialog" aria-modal="true" aria-label="Agenda">
+    <div class="dlghd">
+      <span>Agenda</span>
+      <button class="dlgx" id="agendaClose" type="button" aria-label="Close">&times;</button>
+    </div>
+    <div class="dlgbd">
+      <h4 class="aday">Day 1 · Thursday, 26 November</h4>
+      <table class="atbl">
+        <thead><tr><th>Time</th><th>Agenda</th><th>Audience</th></tr></thead>
+        <tbody>
+          <tr><td class="atime">09:00–09:30</td><td class="aitem">Welcome and introductions</td><td class="awho"><span class="aud a-common">COMMON</span></td></tr>
+          <tr><td class="atime">09:30–12:00</td><td class="aitem">Yearly review: highlights, lowlights, improvements, results</td><td class="awho"><span class="aud a-common">COMMON</span></td></tr>
+          <tr><td class="atime">12:00–13:00</td><td class="aitem">Lunch</td><td class="awho"></td></tr>
+          <tr><td class="atime">13:00–15:00</td><td class="aitem">Discuss creative concept to implement value-centred service</td><td class="awho"><span class="aud a-common">COMMON</span></td></tr>
+          <tr><td class="atime">15:00–16:00</td><td class="aitem">Walkthrough of CPC daily operations, processes and content production workflows</td><td class="awho"><span class="aud a-seas">SEAS</span></td></tr>
+          <tr><td class="atime">16:00–18:00</td><td class="aitem">Meeting with Fernando and Sarah: activities and collaboration</td><td class="awho"><span class="aud a-seas">SEAS</span></td></tr>
+          <tr><td class="atime">15:00–18:00</td><td class="aitem">GEO NL and BE approach: share ways of working with NL producer</td><td class="awho"><span class="aud a-sebn">SEBN</span></td></tr>
+          <tr><td class="atime">18:00–20:00</td><td class="aitem">Free time</td><td class="awho"></td></tr>
+          <tr><td class="atime">20:00</td><td class="aitem">Dinner with Accenture</td><td class="awho"><span class="aud a-all">ALL</span></td></tr>
+        </tbody>
+      </table>
+
+      <h4 class="aday">Day 2 · Friday, 27 November</h4>
+      <table class="atbl">
+        <thead><tr><th>Time</th><th>Agenda</th><th>Audience</th></tr></thead>
+        <tbody>
+          <tr><td class="atime">09:30–10:00</td><td class="aitem">Welcome coffee and informal catch-up</td><td class="awho"><span class="aud a-both">BOTH</span></td></tr>
+          <tr><td class="atime">10:00–12:00</td><td class="aitem">Playbook CS finalisation</td><td class="awho"><span class="aud a-sebn">SEBN</span></td></tr>
+          <tr><td class="atime">10:00–12:00</td><td class="aitem">Working session with Sarah, Fermín and PMs: ways of working, process optimisation and collaboration improvements</td><td class="awho"><span class="aud a-seas">SEAS</span></td></tr>
+          <tr><td class="atime">12:00–13:00</td><td class="aitem">Lunch</td><td class="awho"><span class="aud a-both">BOTH</span></td></tr>
+          <tr><td class="atime">13:00–14:00</td><td class="aitem">Discuss HCR improvements</td><td class="awho"><span class="aud a-common">COMMON</span></td></tr>
+          <tr><td class="atime">14:00–15:00</td><td class="aitem">CPC best practices: content management, knowledge sharing and AI opportunities</td><td class="awho"><span class="aud a-common">COMMON</span></td></tr>
+          <tr><td class="atime">15:00–16:00</td><td class="aitem">Discussion CPC manager, EHQ, SEBN, SEAS (EHQ remotely)</td><td class="awho"><span class="aud a-common">COMMON</span></td></tr>
+          <tr><td class="atime">16:00–16:30</td><td class="aitem">Wrap-up and next steps</td><td class="awho"><span class="aud a-common">COMMON</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 <!-- ============ BOTTOM RAIL ============ -->
 <div class="rail">
   <button class="nav" id="prev" type="button" aria-label="Previous">‹</button>
@@ -2166,6 +2247,21 @@ function renderTat(){
   if(ln){ ln.style.bottom = (avg/max*210) + 'px';
           document.getElementById('mavgtxt').textContent = 'average ' + avg.toFixed(1) + ' d'; }
 }
+
+/* ---------- agenda modal ---------- */
+(function(){
+  var ovl = document.getElementById('agendaOvl');
+  var btn = document.getElementById('agendaOpen');
+  var x   = document.getElementById('agendaClose');
+  if(!ovl || !btn) return;
+  function open(){ ovl.hidden = false; ovl.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+  function close(){ ovl.hidden = true; ovl.style.display = 'none'; document.body.style.overflow = ''; }
+  close();
+  btn.addEventListener('click', open);
+  if(x) x.addEventListener('click', close);
+  ovl.addEventListener('click', function(e){ if(e.target === ovl) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !ovl.hidden) close(); });
+})();
 
 /* ---------- click to play video ---------- */
 document.addEventListener('click', function(e){
